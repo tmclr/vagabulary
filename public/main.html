@@ -1,0 +1,147 @@
+<!DOCTYPE html> 
+<!-- Нужно решить, что будет h1 -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Vagabulary</title>
+  <link href="/style/main.css" rel="stylesheet">
+</head>
+<body>
+  <header class=''>
+    <picture class='logo'>
+		<a ><img src="img/logo.png" id='logo_pic'></a>
+	</picture>
+    <button type='button' class='right'>
+		<a  id='get_test' >Проверь себя</a>
+    </button>
+  </header>
+  <main id='main_block'>
+    <picture class='name'>
+		<img src="img/text.png" class="">
+	</picture>
+	<h1>Главная</h1>
+	<div class='content'>
+	<div class='filter'>
+		<h2>Фильтры</h2>
+		<h3>Суффиксы</h3>
+		<div class='wrap'>
+			<ul id=''>
+				<li><input type="checkbox" id="nic" name="suffix"><label for="nic">-ниц-</label></li>
+				<li><input type="checkbox" id="ih" name="suffix"><label for="ih">-их-</label></li>
+				<li><input type="checkbox" id="inya" name="suffix"><label for="inya">-ин-</label></li>
+				<li><input type="checkbox" id="ess" name="suffix"><label for="ess">-есс-</label></li>
+				<li><input type="checkbox" id="k" name="suffix"><label for="k">-к-</label></li>
+				<li><input type="checkbox" id="ic" name="suffix"><label for="ic">-иц-</label></li>
+				<li><input type="checkbox" id="sh" name="suffix"><label for="sh">-ш-</label></li>
+			</ul>
+		</div>
+	<!--	<h3>Окончания</h3>
+		<div class='wrap'>
+			<ul id=''>
+				<li><input type="checkbox" id="a" name="ending"><label for="a">-а</label></li>
+				<li><input type="checkbox" id="ya" name="ending"><label for="ya">-я</label></li>
+			</ul>
+		</div> -->
+		<button type='button' id = 'filter_button'>
+			<a class='but'>Применить</a>
+		</button>
+	</div>
+	<div class='main'>
+	<div class='search'> <!-- для поиска -->
+		<input type="text" placeholder="Введите слово" id='main_input'>
+		<button type='submit' id='main_button'>
+		Найти
+		</button>
+	</div>
+	<div id='results'> <!-- тут будут результаты поиска -->
+	<!-- <p id='firstw'></p><p id='secondw'></p><p id='thirdw'></p> -->
+	</div>
+	
+	<p id='new' class='hidden'>Знаете вариант лучше? <a id='add'>Предложите</a> его нам!</p>
+	<div id='article'>
+	<p>Феминитивы&nbsp;&mdash; это слова женского рода, альтернативные или парные аналогичным понятиям мужского рода.</p>
+	<p>Феминитивы часто используют для борьбы с&nbsp;гендерной слепотой и&nbsp;для усиления гендерной чувствительности. По&nbsp;мнению некоторых феминистов/-ок, современные языковые нормы способствуют дискриминации женщин 
+и&nbsp;завышению значимости мужчин, в&nbsp;то&nbsp;время как задача феминитивов&nbsp;&mdash; восстановить гендерно-лингвистическое равенство.</p>
+	</div>
+	</div>
+	</div>
+  </main>
+  <main id = 'test_block' hidden>
+	<picture class='background'>
+		<img src="img/background.png" >
+	</picture>
+    <div class='test'>
+		<h1>Проверь свое знание феминитивов!</h1>
+		<p>Тебе будут предоставленны различные професии в&nbsp;мужском роде. <br/>Твоя задача&nbsp;&mdash; написать феминитив к&nbsp;этой профессии.</p>
+		<button type='button' id='start'>
+			<a  class='' >Поехали!</a>
+		</button>
+	</div>
+	<div class='test hidden'>
+		<div id='game'>
+		<h2 id='count'>1/10</h2>
+		<h2 id = 'word'>Адвокат</h2>
+		</div>
+		
+		<div class='answer '> <!-- для игры -->
+			<input id="play_input" type="text" placeholder="Ваш вариант">
+		</div>
+		
+		<!-- <p class=''>Хмм, твоя вариант имеет место быть. Такую вариацию хоть и&nbsp;редко, но&nbsp;используют. Чаще всего используют слово адвокатесса.</p> -->
+		<div id='comment'> <!-- для игры -->
+			
+		</div>
+
+		<button type='button' class='play' id='a'>
+			<a  >Проверить</a>
+		</button>
+		<button type='button' class='play hidden' id='b'>
+			<a  >Дальше</a>
+		</button>
+		<button type='button' class='hidden' id='back_button'>
+			<a  >На главную</a>
+		</button>
+	</div>
+  </main>
+  <main id='add_block' hidden>
+    <picture class='name'>
+		<img src="img/text.png" class="">
+	</picture>
+	<h1>Предложите феминитив</h1>
+	<form class='content' name="feedback" action="api/form/feedback" method="post">
+	<div class='word'> <!-- для ввода профессии -->
+		<h2>Слово:</h2>
+		<input type="text" placeholder="Введите профессию" id="word1" name="main">
+	</div>
+	<div class='word'> <!-- для ввода вариантов -->
+		<div class='second'>
+		<h2>Варианты феминитивов:</h2>
+		<p>Перечислите через запятую</p>
+		</div>
+		<input  type="text" placeholder="Введите варианты феминитивов" id="word2" name="fem">
+	</div>
+	<button type='submit' class='offer' id='add_words'>
+			<a  >Предложить</a>
+		</button>
+	</form>
+	
+  </main>
+  <main id='thanks_block' hidden>
+    <picture class='name'>
+		<img src="img/text.png">
+	</picture>
+	<div class='content'>
+	<h1 style='margin-top: 90px;'>Предложение успешно отправлено! </h1>
+	<p class='center'>Спасибо, что помогаете нам стать лучше.</p>
+	<button type='button' class='offer' id='back_to_main'>
+			<a  >Вернуться на главную</a>
+		</button>
+	</div>
+	
+  </main>
+  <script type="module" src="scripts/index.js"></script>
+  <footer>
+  </footer>
+</body>
+</html>
