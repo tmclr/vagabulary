@@ -6,7 +6,7 @@ export class link{
     }
 
     nextLink(){
-        let arr : NodeListOf<HTMLElement> = document.querySelectorAll('main');
+        const arr : NodeListOf<HTMLElement> = document.querySelectorAll('main');
         switch(this.i){
         case(1):
             arr[0].hidden = true;

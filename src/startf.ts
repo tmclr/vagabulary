@@ -7,7 +7,7 @@ export class start{
 
     startGame(){
        const s = document.getElementsByClassName('test');
-       let i :number = s.length;
+       let i : number = s.length;
        while(i--){
            s[i].classList.toggle('hidden');
        }

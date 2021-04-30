@@ -2,13 +2,14 @@ export class control {
     constructor(button, input, word) {
         this.text = input;
         this.output = word;
-        button.addEventListener('click', () => this.get_text());
+        button.addEventListener('click', () => this.getText());
     }
-    get_text() {
+    getText() {
         const parent = document.getElementById('results');
         if (!(parent instanceof HTMLElement))
             return;
-        let i = 0, arr = [], word = this.text.value, newWord = word;
+        const word = this.text.value;
+        let i = 0, arr = [], newWord = word;
         if (!(word))
             return;
         if (!(newWord))
@@ -62,15 +63,15 @@ export class control {
                 arr[i + 2] = 'иня';
                 arr[i + 3] = 'иха';
             }
-            let arr2 = document.querySelectorAll('input[type=checkbox]');
-            let arr3 = [];
+            const arr2 = document.querySelectorAll('input[type=checkbox]');
+            const arr3 = [];
             let t = -1;
             i = arr2.length;
             while (i--) {
                 const temp = arr2[i];
                 if (temp.checked) {
                     const lid = document.getElementsByTagName('label');
-                    let tmp = lid[i].textContent;
+                    const tmp = lid[i].textContent;
                     if (!(tmp))
                         return;
                     arr3[t += 1] = tmp.slice(1, -1);
@@ -87,20 +88,20 @@ export class control {
                 arr = arr.filter(item => arr3.includes(item));
             i = arr.length;
             if (i === 0) {
-                let newDiv = document.createElement('p');
+                const newDiv = document.createElement('p');
                 newDiv.innerHTML = 'Таких слов нет';
                 parent.append(newDiv);
             }
             else {
                 while (i--) {
-                    let newDiv = document.createElement('p');
+                    const newDiv = document.createElement('p');
                     newDiv.innerHTML = newWord[0].toUpperCase() + newWord.slice(1).toLowerCase() + arr[i];
                     parent.append(newDiv);
                 }
             }
         }
         else if (word.slice(-1) == 'а' || word.slice(-1) == 'я') {
-            let newDiv = document.createElement('p');
+            const newDiv = document.createElement('p');
             newDiv.innerHTML = 'Это слово и так прекрасно';
             parent.append(newDiv);
         }
@@ -118,7 +119,7 @@ export class control {
             }
         }
         else {
-            let newDiv = document.createElement('p');
+            const newDiv = document.createElement('p');
             newDiv.innerHTML = 'Ну издеваться то не надо';
             parent.append(newDiv);
         }

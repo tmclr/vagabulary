@@ -1,6 +1,6 @@
 {
   "name": "vagabulary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": " ",
   "main": "server/indexServer.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "watch:server": "cd server.src && tsc -w",
     "build:client": "cd src && tsc",
     "watch:client": "cd src && tsc -w",
-    "build":"npm run build:server && npm run build:client",
+    "build": "npm run build:server && npm run build:client",
     "postinstall": "npm run build:server"
   },
   "repository": {

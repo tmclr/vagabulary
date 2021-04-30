@@ -4,7 +4,7 @@ export class link {
         this.i = t;
     }
     nextLink() {
-        let arr = document.querySelectorAll('main');
+        const arr = document.querySelectorAll('main');
         switch (this.i) {
             case (1):
                 arr[0].hidden = true;
