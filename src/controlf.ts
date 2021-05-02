@@ -74,13 +74,16 @@ export class control{
             const arr3 : string[] = [];
             let t : number = -1;
             i = arr2.length;
+            const lid : NodeListOf<HTMLLabelElement> = document.querySelectorAll('label');
+
             while (i--)
             {
                 const temp = arr2[i] as HTMLInputElement;
                 if (temp.checked)
                 {
-                    const lid = document.getElementsByTagName('label');
-                    const tmp = lid[i].textContent;
+                    
+                    const p = lid[i] as HTMLLabelElement
+                    const tmp = p.textContent;
                     if (!(tmp))
                         return;
                     arr3[t+=1] = tmp.slice(1, -1);
@@ -89,7 +92,8 @@ export class control{
             i = arr3.length;
             while (i--)
             {
-                if (arr3[i].slice(-1) === 'н')
+                const p = arr3[i] as string
+                if (p.slice(-1) === 'н')
                     arr3[i] += 'я';
                 else
                     arr3[i] += 'а';
@@ -107,6 +111,8 @@ export class control{
                 while (i--)
                  {
                 const newDiv : HTMLParagraphElement= document.createElement('p');
+                if (newWord[0] === undefined)
+                    return;
                 newDiv.innerHTML =  newWord[0].toUpperCase() +  newWord.slice(1).toLowerCase() + arr[i] ;
                 parent.append(newDiv);
                   }

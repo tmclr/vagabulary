@@ -9,7 +9,8 @@ export class start{
        const s = document.getElementsByClassName('test');
        let i : number = s.length;
        while(i--){
-           s[i].classList.toggle('hidden');
+            const p = s[i] as HTMLElement;
+            p.classList.toggle('hidden');
        }
     }
 }

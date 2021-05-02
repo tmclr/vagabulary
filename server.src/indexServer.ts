@@ -1,6 +1,6 @@
 import Express from 'express';
 import { resolve } from 'path';
-import Handlebars from 'express-handlebars';
+
 import BodyParser from 'body-parser';
 import { readFile, writeFile } from 'fs/promises';
 
@@ -8,54 +8,12 @@ const rootPath = resolve( __dirname, '..' );
 process.chdir( rootPath );
 
 const app = Express();
-app.listen( 8000 );
+app.listen( 8002 );
 
-app.get(
-	'/hi',
-	( _request: Express.Request, response: Express.Response ) =>
-	{
-		response.send( String( new Date() ) );
-	},
-);
 
-app.use( Express.static( resolve( rootPath, 'public' ) ) );
 
-app.engine(
-	'.hbs',
-	Handlebars(
-		{
-			defaultLayout: 'main',
-			extname: '.hbs',
-		},
-	),
-);
-app.set( 'view engine', '.hbs' );
 
-app.get(
-	'/',
-	( _request: Express.Request, response: Express.Response ) =>
-	{
-		response.render(
-			'index',
-			{
-				message: 'Привет, Мир!',
-				title: 'Главная страница',
-			},
-		);
-	},
-);
-app.get(
-	'/about',
-	( _request: Express.Request, response: Express.Response ) =>
-	{
-		response.render(
-			'about',
-			{
-				title: 'О сайте',
-			},
-		);
-	},
-);
+
 
 const jsonParser = BodyParser.json();
 const feedbacksFile = resolve( rootPath, 'feedback.json' );

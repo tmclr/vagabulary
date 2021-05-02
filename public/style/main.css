@@ -11,6 +11,7 @@ header{
 }
 
 button{
+	font-family: FuturaBookC, sans-serif;
 	width: 182px;
 	height: 45px;
 	border-radius: 10px;
@@ -25,10 +26,6 @@ button:hover{
 	cursor: pointer;
 }
 
-button a{
-	text-decoration: none;
-	color: #ffffff;
-}
 
 button p{
 	text-decoration: none;
@@ -130,13 +127,14 @@ picture.name img{
 	margin-bottom: 30px;
 }
 h2{
-
+	font-family: FuturaBookC, sans-serif;
 	font-size: 24px;
 	color: #392675;
 	margin: 11px 13px 0 13px;
 }
 
 h3{
+	font-family: FuturaBookC, sans-serif;
 	font-size: 18px;
 	color: #C3669C;
 	line-height: 20px;
@@ -145,6 +143,7 @@ h3{
 }
 
 ul {
+	font-family: FuturaBookC, sans-serif;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -173,6 +172,7 @@ ul {
 }
 
 li{
+	font-family: FuturaBookC, sans-serif;
 	font-size: 24px;
 	line-height: 26px;
 	display: flex;
@@ -248,6 +248,7 @@ input[type=checkbox] {
 }
 
 input{
+	font-family: FuturaBookC, sans-serif;
 	/* border-color: #392675;*/
 	float: right;
 }
@@ -273,6 +274,7 @@ input{
 }
 
 p{
+	font-family: FuturaBookC, sans-serif;
 	font-size: 24px;
 	color: #392675;
 }
@@ -351,6 +353,7 @@ p#new{
 }
 
 p a{
+	font-family: FuturaBookC, sans-serif;
 	text-decoration: none;
 	color: #C3669C;
 }

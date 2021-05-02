@@ -18,11 +18,11 @@ export class answer{
             const cid = document.getElementById('count');
             if (!(cid instanceof HTMLElement))
                 return ;
-            cid.innerHTML = 'Ваш счет:';
+            cid.textContent = 'Ваш счет:';
             const wid = document.getElementById('word');
             if (!(wid instanceof HTMLElement))
                 return ;
-            wid.innerHTML = `${this.count}`;
+            wid.textContent = `${this.count}`;
             if (this.count<20)
             {
                 const c = document.createElement('p');
@@ -217,8 +217,10 @@ export class answer{
         this.x+=1;
         const s : HTMLCollectionOf<Element> = document.getElementsByClassName('play');
         let i : number = s.length;
+             
         while(i--){
-           s[i].classList.toggle('hidden');
+            const p = s[i] as HTMLElement
+            p.classList.toggle('hidden');
         }
         const pid = document.getElementById('play_input');
         if (!(pid instanceof HTMLElement))
@@ -248,7 +250,8 @@ export class check{
        const s : HTMLCollectionOf<Element> = document.getElementsByClassName('play');
         let i : number = s.length;
         while(i--){
-           s[i].classList.toggle('hidden');
+            const p = s[i] as HTMLElement
+           p.classList.toggle('hidden');
         }
         this.x1+=1;
         const pid = document.getElementById('play_input');
@@ -258,11 +261,12 @@ export class check{
         const cid = document.getElementById('count');
         if (!(cid instanceof HTMLElement))
             return ;
-        cid.innerHTML = `${this.x1+1}/10`;
+        cid.textContent = `${this.x1+1}/10`;
         const wid = document.getElementById('word');
-        if (!(wid instanceof HTMLElement))
-            return ;
-        wid.innerHTML = arr[this.x1];}
+        if (!(wid instanceof HTMLElement)) 
+            return;
+        wid.textContent = arr[this.x1] as string;
+    }
         else
         {
             this.x1=0;

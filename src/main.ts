@@ -7,29 +7,33 @@ export class link{
 
     nextLink(){
         const arr : NodeListOf<HTMLElement> = document.querySelectorAll('main');
+        const p0 = arr[0] as HTMLElement;
+        const p1 = arr[1] as HTMLElement;
+        const p2 = arr[2] as HTMLElement;
+        const p3 = arr[3] as HTMLElement;
         switch(this.i){
         case(1):
-            arr[0].hidden = true;
-            arr[2].hidden = false;
+            p0.hidden = true;
+            p2.hidden = false;
             break;
         case(2):
-            arr[2].hidden = true;
-            arr[1].hidden = true;
-            arr[3].hidden = true;
-            arr[0].hidden = false;
+            p2.hidden = true;
+            p1.hidden = true;
+            p3.hidden = true;
+            p0.hidden = false;
             window.location.reload();
             break;
         case(3):
-            arr[2].hidden = true;
-            arr[0].hidden = true;
-            arr[3].hidden = true;
-            arr[1].hidden = false;
+            p2.hidden = true;
+            p0.hidden = true;
+            p3.hidden = true;
+            p1.hidden = false;
             break;
         case(4):
-            arr[2].hidden = true;
-            arr[0].hidden = true;
-            arr[1].hidden = true;
-            arr[3].hidden = false;
+            p2.hidden = true;
+            p0.hidden = true;
+            p1.hidden = true;
+            p3.hidden = false;
             break;
         }
     }
