@@ -18,4 +18,4 @@ npm i
 npm run build
 npm start
 
-Перейти по ссылке localhost:8000/main.html
+Перейти по ссылке localhost:8002/main.html
